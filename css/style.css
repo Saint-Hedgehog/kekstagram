@@ -1360,22 +1360,21 @@ main {
           transform: translateX(-50%);
 }
 
+@keyframes marquee {
+  0% { width: 0; }
+  100% { width: 300px; }
+}
+
 .img-upload__message--loading::after {
   content: "";
   position: absolute;
   bottom: 40%;
-  left: 50%;
-
-  width: 200px;
+  left: 25%;
+  width: 300px;
   height: 10px;
-
   background-color: #ffe753;
-
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  animation: marquee 4s linear;
 }
-
 
 /* Адаптивности чуток
    ========================================================================== */
