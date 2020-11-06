@@ -7,7 +7,6 @@ const error = document.querySelector(`#error`).content.querySelector(`.error`);
 
 const openErrorMessage = () => {
   const errorBlock = error.cloneNode(true);
-
   main.append(errorBlock);
 
   const errorButton = errorBlock.querySelector(`.error__button`);
