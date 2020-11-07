@@ -1,6 +1,6 @@
 'use strict';
 
-const {isEscEvent, resetUserImgSettings, imageUploadForm, userUploadImg} = window.utils;
+const {isEscEvent, resetUserImgSettings, imageUploadForm, userUploadImg, resetForm} = window.utils;
 const {save} = window.backend;
 const {openСongratulationMessage} = window.success;
 const {openErrorMessage} = window.mistake;
@@ -44,6 +44,7 @@ imageUploadInput.addEventListener(`change`, onInputUploadImage);
 // закрывает окно редактирования загруженного фото
 const onButtonCancelCloseUpload = () => {
   resetUserImgSettings();
+  resetForm();
 
   userUploadImg.src = previewImgDefault;
   effectsPreviewImages.forEach((effectPreview) => {

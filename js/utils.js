@@ -12,10 +12,10 @@ const effectDepth = imageUploadForm.querySelector(`.effect-level__depth`);
 const effectOriginalInput = imageUploadForm.querySelector(`#effect-none`);
 const imgFilters = document.querySelector(`.img-filters`);
 // действие при нажатии на ESC
-const isEscEvent = (evt, callback) => {
+const isEscEvent = (evt, action) => {
   if (evt.key === `Escape`) {
     evt.preventDefault();
-    callback();
+    action();
   }
 };
 
@@ -43,8 +43,8 @@ const shufflePhotos = (photos) => {
 const resetUserImgSettings = () => {
   effectSlider.classList.add(`hidden`);
   userUploadImg.removeAttribute(`class`);
-  userUploadImg.removeAttribute(`style`);
   userUploadImg.style.transform = `scale(${MAX_EFFECT_VALUE / MAX_EFFECT_VALUE})`;
+  userUploadImg.removeAttribute(`style`);
   scaleIndicator.value = `${MAX_EFFECT_VALUE}%`;
   effectValueInput.value = MAX_EFFECT_VALUE;
   pin.style.left = `${MAX_EFFECT_VALUE}%`;
